@@ -1,0 +1,18 @@
+[submodule "owlook-base"]
+	path = owlook-base
+	url = https://github.com/SF-45/owlook-base.git
+[submodule "owlook"]
+	path = owlook
+	url = https://github.com/SF-45/owlook.git
+[submodule "owlook-bom"]
+	path = owlook-bom
+	url = https://github.com/SF-45/owlook-bom.git
+[submodule "modules/dataccess-owlook"]
+	path = modules/dataccess-owlook
+	url = https://github.com/SF-45/dataccess-owlook.git
+[submodule "modules/tableviewer-owlook"]
+	path = modules/tableviewer-owlook
+	url = https://github.com/SF-45/tableviewer-owlook.git
+[submodule "modules/execactions-owlook"]
+	path = modules/execactions-owlook
+	url = https://github.com/SF-45/execactions-owlook.git

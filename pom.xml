@@ -1,0 +1,116 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>space.sadfox</groupId>
+  <artifactId>owlook-quickstart</artifactId>
+  <packaging>pom</packaging>
+  <version>0.0.1</version>
+
+  <modules>
+    <module>owlook</module>
+    <module>owlook-base</module>
+    <module>owlook-bom</module>
+    <module>modules/dataccess-owlook</module>
+    <module>modules/tableviewer-owlook</module>
+    <module>modules/execactions-owlook</module>
+  </modules>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>3.5.0</version>
+        <configuration>
+          <excludeDefaultDirectories>true</excludeDefaultDirectories>
+          <filesets>
+            <fileset>
+              <directory>runtime/module</directory>
+              <followSymlinks>false</followSymlinks>
+              <useDefaultExcludes>true</useDefaultExcludes>
+            </fileset>
+            <fileset>
+              <directory>runtime/app</directory>
+              <followSymlinks>false</followSymlinks>
+              <useDefaultExcludes>true</useDefaultExcludes>
+            </fileset>
+            <fileset>
+              <directory>runtime/logs</directory>
+              <followSymlinks>false</followSymlinks>
+              <useDefaultExcludes>true</useDefaultExcludes>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.4.0</version>
+        <executions>
+          <execution>
+            <id>Copy Owlook App</id>
+            <phase>install</phase>
+            <configuration>
+              <outputDirectory>runtime/app</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>./owlook/target</directory>
+                  <includes>
+                    <include>*.jar</include>
+                  </includes>
+                </resource>
+                <resource>
+                  <directory>./owlook/target/lib</directory>
+                  <!-- <includes> -->
+                  <!--   <include>*.jar</include> -->
+                  <!-- </includes> -->
+                </resource>
+              </resources>
+            </configuration>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>Copy Owlook Modules</id>
+            <phase>install</phase>
+            <configuration>
+              <outputDirectory>runtime/module</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>./modules/dataccess-owlook/target</directory>
+                  <includes>
+                    <include>*.owlm</include>
+                  </includes>
+                </resource>
+                <resource>
+                  <directory>./modules/execactions-owlook/target</directory>
+                  <includes>
+                    <include>*.owlm</include>
+                  </includes>
+                </resource>
+                <resource>
+                  <directory>./modules/sgktoolkit-owlook/target</directory>
+                  <includes>
+                    <include>*.owlm</include>
+                  </includes>
+                </resource>
+                <resource>
+                  <directory>./modules/tableviewer-owlook/target</directory>
+                  <includes>
+                    <include>*.owlm</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
