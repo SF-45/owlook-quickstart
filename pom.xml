@@ -11,6 +11,7 @@
     <module>owlook</module>
     <module>owlook-base</module>
     <module>owlook-bom</module>
+    <module>owlook-packer-maven-plugin</module>
     <module>modules/dataccess-owlook</module>
     <module>modules/tableviewer-owlook</module>
     <module>modules/execactions-owlook</module>
@@ -36,7 +37,12 @@
               <useDefaultExcludes>true</useDefaultExcludes>
             </fileset>
             <fileset>
-              <directory>runtime/logs</directory>
+              <directory>runtime/lib-win</directory>
+              <followSymlinks>false</followSymlinks>
+              <useDefaultExcludes>true</useDefaultExcludes>
+            </fileset>
+            <fileset>
+              <directory>runtime/lib-linux</directory>
               <followSymlinks>false</followSymlinks>
               <useDefaultExcludes>true</useDefaultExcludes>
             </fileset>
@@ -62,6 +68,42 @@
                 </resource>
                 <resource>
                   <directory>./owlook/target/lib</directory>
+                  <!-- <includes> -->
+                  <!--   <include>*.jar</include> -->
+                  <!-- </includes> -->
+                </resource>
+              </resources>
+            </configuration>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>Copy Owlook Windows Libraries</id>
+            <phase>install</phase>
+            <configuration>
+              <outputDirectory>runtime/lib-win</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>./owlook/target/lib-win</directory>
+                  <!-- <includes> -->
+                  <!--   <include>*.jar</include> -->
+                  <!-- </includes> -->
+                </resource>
+              </resources>
+            </configuration>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>Copy Owlook Linux Libraries</id>
+            <phase>install</phase>
+            <configuration>
+              <outputDirectory>runtime/lib-linux</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>./owlook/target/lib-linux</directory>
                   <!-- <includes> -->
                   <!--   <include>*.jar</include> -->
                   <!-- </includes> -->

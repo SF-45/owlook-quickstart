@@ -1,18 +1,28 @@
 [submodule "owlook-base"]
 	path = owlook-base
 	url = https://github.com/SF-45/owlook-base.git
+  branch = master
 [submodule "owlook"]
 	path = owlook
 	url = https://github.com/SF-45/owlook.git
+  branch = master
 [submodule "owlook-bom"]
 	path = owlook-bom
 	url = https://github.com/SF-45/owlook-bom.git
+  branch = master
 [submodule "modules/dataccess-owlook"]
 	path = modules/dataccess-owlook
 	url = https://github.com/SF-45/dataccess-owlook.git
+  branch = master
 [submodule "modules/tableviewer-owlook"]
 	path = modules/tableviewer-owlook
 	url = https://github.com/SF-45/tableviewer-owlook.git
+  branch = master
 [submodule "modules/execactions-owlook"]
 	path = modules/execactions-owlook
 	url = https://github.com/SF-45/execactions-owlook.git
+  branch = master
+[submodule "owlook-packer-maven-plugin"]
+	path = owlook-packer-maven-plugin
+	url = https://github.com/SF-45/owlook-packer-maven-plugin.git
+	branch = master

@@ -1,3 +1,3 @@
 #!/bin/sh
 cd runtime
-java -p app -m space.sadfox.owlook/space.sadfox.owlook.Main
+java -p app:lib-linux -m space.sadfox.owlook/space.sadfox.owlook.Main
